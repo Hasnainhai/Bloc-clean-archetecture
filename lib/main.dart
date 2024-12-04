@@ -17,7 +17,8 @@ import 'configs/themes/light_theme.dart'; // Light theme configuration
 GetIt getIt = GetIt.instance;
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensuring that Flutter bindings are initialized
+  WidgetsFlutterBinding
+      .ensureInitialized(); // Ensuring that Flutter bindings are initialized
   servicesLocator(); // Initializing service locator for dependency injection
   runApp(const MyApp()); // Running the application
 }
@@ -52,6 +53,8 @@ class MyApp extends StatelessWidget {
 
 // Function for initializing service locator
 void servicesLocator() {
-  getIt.registerLazySingleton<AuthApiRepository>(() => AuthHttpApiRepository()); // Registering AuthHttpApiRepository as a lazy singleton for AuthApiRepository
-  getIt.registerLazySingleton<MoviesApiRepository>(() => MoviesHttpApiRepository()); // Registering MoviesHttpApiRepository as a lazy singleton for MoviesApiRepository
+  getIt.registerLazySingleton<AuthApiRepository>(() =>
+      AuthHttpApiRepository()); // Registering AuthHttpApiRepository as a lazy singleton for AuthApiRepository
+  getIt.registerLazySingleton<MoviesApiRepository>(() =>
+      MoviesHttpApiRepository()); // Registering MoviesHttpApiRepository as a lazy singleton for MoviesApiRepository
 }
